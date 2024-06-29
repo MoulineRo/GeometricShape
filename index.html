@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    class GeometricShape {
+        constructor(type, color, area) {
+            this.type = type;
+            this.color = color;
+            this.area = area
+            this._perimeter = null
+        }
+
+        get info() {
+            return `${this.type}, ${this.color}, ${this.area}`
+        }
+
+        set changePerimeter(sum) {
+            this._perimeter = sum
+        }
+    }
+
+
+    class Circle extends GeometricShape {
+        constructor(type, color, area, radius) {
+            super(type, color, area);
+            this.radius = radius
+        }
+
+        circleArea() {
+            this.area = this.radius * this.radius * 3.14
+            return this.area
+        }
+
+        circlePerimeter() {
+            this._perimeter = 2 * this.radius * 3.14
+            return this._perimeter
+        }
+    }
+
+    class Rectangle extends GeometricShape {
+        constructor(type, color, area, width, height) {
+            super(type, color, area);
+            this.width = width;
+            this.height = height;
+        }
+
+        rectangleArea() {
+            this.area = this.width * this.height
+            return this.area
+        }
+
+        rectanglePerimeter() {
+            this._perimeter = 2 * (this.width + this.height)
+            return this._perimeter
+        }
+    }
+</script>
+</body>
+</html>
